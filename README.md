@@ -5,3 +5,4 @@ Se recomienda utilizar un gestor de cambios como [**SourceTree**](https://www.so
 # Changelog
 
 - 16/08/2022 Creación de la rama release
+- 16/08/2022 Modificación de Mauricio
