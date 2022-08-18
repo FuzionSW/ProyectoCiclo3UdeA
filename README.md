@@ -5,3 +5,4 @@ Se recomienda utilizar un gestor de cambios como [**SourceTree**](https://www.so
 # Changelog
 
 - 16/08/2022 Creación de la rama release
+- 18/08/2022 Creación del proyecto Spring Boot con dependencias Spring Web, Spring DevTools, OAuth2 Client, PostgreSQL Driver y Sping Data JPA en Maven mediante [**Spring Initializr**](Spring Initializrhttps://start.spring.io "Spring Initializr")
