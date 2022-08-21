@@ -6,3 +6,4 @@ Se recomienda utilizar un gestor de cambios como [**SourceTree**](https://www.so
 
 - 16/08/2022 Creación de la rama release
 - 16/08/2022 Hola mundo Luisa 
+- 21/08/2022 Creación de la Clase Employee con atributos Name, Email, Enterprise y Role de acuerdo con el diagrama de Entidad - Relación
