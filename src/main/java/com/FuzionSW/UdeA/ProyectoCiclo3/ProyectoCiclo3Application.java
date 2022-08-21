@@ -1,6 +1,6 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3;
 
-import com.FuzionSW.UdeA.ProyectoCiclo3.Modelos.Enterprise;
+import com.FuzionSW.UdeA.ProyectoCiclo3.Models.Enterprise;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;

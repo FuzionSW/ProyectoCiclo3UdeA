@@ -1,4 +1,4 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.Modelos;
+package com.FuzionSW.UdeA.ProyectoCiclo3.Models;
 
 import javax.persistence.*;
 
