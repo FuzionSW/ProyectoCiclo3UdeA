@@ -6,3 +6,4 @@ Se recomienda utilizar un gestor de cambios como [**SourceTree**](https://www.so
 
 - 16/08/2022 Creación de la rama release
 - 18/08/2022 Creación del proyecto Spring Boot con dependencias Spring Web, Spring DevTools, OAuth2 Client, PostgreSQL Driver y Sping Data JPA en Maven mediante [**Spring Initializr**](https://start.spring.io "Spring Initializr")
+- 21/08/2022 Creación de la Clase Enterprise con atributos Name, Address, Phone y Document de acuerdo con el diagrama de Entidad - Relación
