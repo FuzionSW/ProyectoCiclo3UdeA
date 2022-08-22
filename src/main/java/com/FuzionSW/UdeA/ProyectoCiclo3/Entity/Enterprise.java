@@ -1,4 +1,4 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.Models;
+package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
 
 import javax.persistence.*;
 
@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Enterprise {
     @Id                                                 // Anotación de Clave primaria
     @GeneratedValue(strategy = GenerationType.AUTO)     // Autoincrementable
-    private int id;                                     // en la base de datos
+    private long id;                                     // en la base de datos
     private String name;
     private String address;
     private String phone;
@@ -23,7 +23,7 @@ public class Enterprise {
         this.document = NIT;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
