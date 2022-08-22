@@ -2,6 +2,12 @@
 # Repositorio del proyecto final del ciclo 3 UdeA
 Se recomienda utilizar un gestor de cambios como [**SourceTree**](https://www.sourcetreeapp.com/ "SourceTree") e [**IntelliJ**](https://www.jetbrains.com/es-es/idea/download/#section=windows "IntelliJ") como entorno de desarrollo (IDE).
 
+# Arquitectura de la solución
+![image](https://user-images.githubusercontent.com/6804880/186027115-c20e3f8a-8fe7-436b-94b2-ff03dfd6b042.png)
+
+# Diagrama Entidad - Relación
+![image](https://user-images.githubusercontent.com/6804880/186027264-a1bf5b7a-f8ed-4a51-9d7c-47d5fa232028.png)
+
 # Changelog
 
 - 16/08/2022 Creación de la rama release
