@@ -2,32 +2,33 @@ package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
 
 import javax.persistence.*;
 
-@Entity                                                 // Anotación de la entidad para la gestión de la BD
+@Entity
 @Table(name = "Enterprise")
 public class Enterprise {
-    @Id                                                 // Anotación de Clave primaria
-    @GeneratedValue(strategy = GenerationType.AUTO)     // Autoincrementable
-    private long id;                                     // en la base de datos
+    @Id
+    @GeneratedValue
+    private long id;
     private String name;
-    private String address;
-    private String phone;
     private String document;
+    private String phone;
+    private String address;
 
     public Enterprise() {
     }
 
-    public Enterprise(String nombre, String direccion, String phone, String NIT) {
-        this.name = nombre;
-        this.address = direccion;
+    public Enterprise(long id, String name, String document, String phone, String address) {
+        this.id = id;
+        this.name = name;
+        this.document = document;
         this.phone = phone;
-        this.document = NIT;
+        this.address = address;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -39,12 +40,12 @@ public class Enterprise {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDocument() {
+        return document;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDocument(String document) {
+        this.document = document;
     }
 
     public String getPhone() {
@@ -55,13 +56,12 @@ public class Enterprise {
         this.phone = phone;
     }
 
-    public String getDocument() {
-        return document;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDocument(String document) {
-        this.document = document;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
-
 

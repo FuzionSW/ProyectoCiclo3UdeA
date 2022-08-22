@@ -10,40 +10,44 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class projectController {
     @GetMapping({"/pruebaEmpresa"})
-    public String pruebaEmpresa() {
-        Enterprise enterprise = new Enterprise();			// Se crea la empresa
-        //Empresa enterprise = new Empresa("Artelak", "Calle la Gta", "3213213211", "800212132-3");
-        enterprise.setName("Artelak SAS");					// Se modifica el nombre
-        enterprise.setAddress("Calle 13");				// Se modifica la dirección
-        enterprise.setPhone("3213213211");					// Se modifica el teléfono
-        enterprise.setDocument("800212132-3");				// Se modifica el NIT
-        return enterprise.getId() + " " + enterprise.getName() + " " + enterprise.getAddress() + " " + enterprise.getPhone() + " " + enterprise.getDocument();
+    public String pruebaEmpresa(){
+        Enterprise enterprise = new Enterprise();
+        enterprise.setName("Artelak");
+        enterprise.setAddress("Calle 13");
+        enterprise.setPhone("3213213211");
+        enterprise.setDocument("8521234-6");
+        return enterprise.getId() + " " + enterprise.getName() + " " + enterprise.getAddress() + " " + enterprise.getDocument() + " " + enterprise.getPhone();
     }
 
     @GetMapping({"/pruebaEmpleado"})
-    public String pruebaEmpleado() {
-        Employee empleado = new Employee();
-        empleado.setName("Mauricio");
-        empleado.setEmail("artelak@gmail.com");
+    public String pruebaEmpleado(){
+        Employee employee = new Employee();
+        employee.setName("Pepito Perez");
+        employee.setEmail("pepito@perez.com");
 
-        Enterprise empresa = new Enterprise();
-        empresa.setName("Artelak SAS");
-        empleado.setEnterprise(empresa);
-        RoleName role = RoleName.ADMIN;
-        empleado.setRole(role);
+        Enterprise enterprise = new Enterprise();
+        enterprise.setName("Artelak");
+        employee.setEnterprise(enterprise);
 
-        return empleado.getId() + " " + empleado.getName() + " " + empleado.getEmail() + " " + empleado.getEnterprise().getName() + " " + empleado.getRole().getRoleName();
+        RoleName role = RoleName.OPERATOR;
+        employee.setRole(role);
+        return employee.getId() + " " + employee.getName() + " " + employee.getEmail() + " " + employee.getEnterprise().getName() + " " + employee.getRole().getRoleName();
     }
 
     @GetMapping({"/pruebaMovimiento"})
-    public String pruebaMovimiento() {
-        Transaction movimientoDinero = new Transaction();
-        movimientoDinero.setAmount(-20500.3);
-        movimientoDinero.setConcept("Ventas");
+    public String pruebaMovimiento(){
+        Transaction transaction = new Transaction();
+        transaction.setAmount(-10000.5);
+        transaction.setConcept("Deuda");
 
         Employee user = new Employee();
-        user.setName("Mauricio");
-        movimientoDinero.setUser(user);
-        return movimientoDinero.getId() + " " + movimientoDinero.getAmount() + " " + movimientoDinero.getConcept() + " " + movimientoDinero.getUser().getName();
+        user.setName("Pepito Perez");
+        transaction.setEmployee(user);
+
+        Enterprise enterprise = new Enterprise();
+        enterprise.setName("Artelak");
+        transaction.setEnterprise(enterprise);
+
+        return transaction.getId() + " " + transaction.getConcept() + " " + transaction.getAmount() + " " + transaction.getEmployee().getName() + " " + transaction.getEnterprise().getName();
     }
 }

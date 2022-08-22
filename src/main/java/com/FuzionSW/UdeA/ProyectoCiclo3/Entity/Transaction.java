@@ -3,26 +3,31 @@ package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Transaction")
+@Table (name = "Transaction")
 public class Transaction {
-    @Id // Anotación de la llave primaria
-    @GeneratedValue(strategy = GenerationType.AUTO) //auto incrementable.
-    private long id; // Es el identificador en la base de datos
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String concept;
     private double amount;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    private Employee user;
+    Employee employee = new Employee();
+
+    @ManyToOne
+    @JoinColumn(name = "enterprise_id")
+    Enterprise enterprise = new Enterprise();
 
     public Transaction() {
     }
 
-    public Transaction(String concept, double amount, Employee user) {
+    public Transaction(long id, String concept, double amount, Employee employee, Enterprise enterprise) {
+        this.id = id;
         this.concept = concept;
         this.amount = amount;
-        this.user = user;
+        this.employee = employee;
+        this.enterprise = enterprise;
     }
 
     public long getId() {
@@ -49,11 +54,19 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public Employee getUser() {
-        return user;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setUser(Employee user) {
-        this.user = user;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
     }
 }

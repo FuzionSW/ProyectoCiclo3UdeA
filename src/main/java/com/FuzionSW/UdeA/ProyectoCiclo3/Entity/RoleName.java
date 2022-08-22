@@ -6,11 +6,18 @@ public enum RoleName {
 
     private String roleName;
 
-    RoleName(String roleName){
+    RoleName() {
+    }
+
+    RoleName(String roleName) {
         this.roleName = roleName;
     }
 
-    public String getRoleName(){
+    public String getRoleName() {
         return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }
