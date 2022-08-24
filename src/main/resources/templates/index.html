@@ -1,67 +1,9 @@
 <!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sistema contable | FuzionSW</title>
-    <link rel="shortcut icon" type="image/ico" href="../static/img/favicon.ico" th:href="@{/img/favicon.ico}"/>
-
-    <!-- Font Awesome CDN link-->
-    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
-
-    <!-- Vincula el index.css-->
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css" th:href="@{/css/index.css}">
-</head>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/html_head.html}"/>
 <body>
-    <div class="sidebar">
-        <div class="logo-details">
-            <img class=icon src="../static/img/logo.png" alt="Logo" th:src="@{/img/logo.png}"/>
-            <div class="logo_name">FuzionSW</div>
-            <i class="fa-solid fa-bars" id="btn"></i>
-        </div>
-        <hr class="separator">
-        <p class="title">Menú</p>
-        <hr class="separator">
-        <ul class="nav-list">
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="links_name">Home</span>
-                </a>
-                <span class="tooltip">Home</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-money-check-dollar"></i>
-                    <span class="links_name">Ingresos y egresos</span>
-                </a>
-                <span class="tooltip">Ingresos y egresos</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-users"></i>
-                    <span class="links_name">Usuarios</span>
-                </a>
-                <span class="tooltip">Usuarios</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-building"></i>
-                    <span class="links_name">Empresas</span>
-                </a>
-                <span class="tooltip">Empresas</span>
-            </li>
-            <li class="logout">
-                <a href="#">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span class="links_name">Salir</span>
-                </a>
-                <span class="tooltip">Salir</span>
-            </li>
-        </ul>
-    </div>
+    <div th:replace="~{fragments/html_sidebar.html}" />
     <section class="home-section">
         <div class="text">
             <h1>Dashboard</h1>
@@ -69,6 +11,7 @@
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </div>
+        <div th:replace="~{fragments/html_footer.html}" />
     </section>
     <script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
 </body>

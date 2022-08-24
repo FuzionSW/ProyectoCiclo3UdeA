@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+  <div th:fragment="html_sidebar" class="sidebar">
+    <div class="logo-details">
+      <img class=icon src="../static/img/logo.png" alt="Logo" th:src="@{/img/logo.png}"/>
+      <div class="logo_name">FuzionSW</div>
+      <i class="fa-solid fa-bars" id="btn"></i>
+    </div>
+    <hr class="separator">
+    <p class="title">Menú</p>
+    <hr class="separator">
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-house"></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="tooltip">Home</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-money-check-dollar"></i>
+          <span class="links_name">Ingresos y egresos</span>
+        </a>
+        <span class="tooltip">Ingresos y egresos</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-users"></i>
+          <span class="links_name">Usuarios</span>
+        </a>
+        <span class="tooltip">Usuarios</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-building"></i>
+          <span class="links_name">Empresas</span>
+        </a>
+        <span class="tooltip">Empresas</span>
+      </li>
+      <li class="logout">
+        <a href="#">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span class="links_name">Salir</span>
+        </a>
+        <span class="tooltip">Salir</span>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
