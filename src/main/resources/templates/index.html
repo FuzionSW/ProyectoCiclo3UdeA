@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="~{fragments/html_head.html}" />
+    <!-- Vincula el style.css-->
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" th:href="@{/css/index.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/html_sidebar.html}" />
+    <section class="home-section">
+        <div class="container-menu">
+            <div class="titulo">
+                <h1>Sistema contable | Menú principal</h1>
+            </div>
+            <div class="sistemas">
+                <div class="carta">
+                    <h3>Sistema de gestión de ingresos y gastos</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero corporis incidunt saepe qui commodi quasi neque veniam quam, aspernatur est beatae maxime animi sed reiciendis mollitia ducimus veritatis repellendus?</p>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/ingresos-y-egresos'|">Acceder</button>
+                </div>
+                <div class="carta">
+                    <h3>Sistema de gestión de usuarios</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero corporis incidunt saepe qui commodi quasi neque veniam quam, aspernatur est beatae maxime animi sed reiciendis mollitia ducimus veritatis repellendus?</p>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/usuarios'|">Acceder</button>
+                </div>
+                <div class="carta">
+                    <h3>Sistema de gestión de empresas</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero corporis incidunt saepe qui commodi quasi neque veniam quam, aspernatur est beatae maxime animi sed reiciendis mollitia ducimus veritatis repellendus?</p>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/empresas'|">Acceder</button>
+                </div>
+            </div>
+        </div>
+        <div th:replace="~{fragments/html_footer.html}" />
+    </section>
+    <script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+</html>

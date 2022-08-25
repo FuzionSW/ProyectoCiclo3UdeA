@@ -2,30 +2,30 @@ package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
 
 import javax.persistence.*;
 
-
-@Entity
-@Table(name = "Employee")
+@Entity //Es una anotación de la entidad para la gestión de la base de datos.
+@Table(name="Employee")
 public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @Id // Anotación de la llave primaria
+    @GeneratedValue(strategy = GenerationType.AUTO) //auto incrementable.
+    private long id; // Es el identificador en la base de datos
+
     private String name;
     private String email;
-    RoleName role;
 
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
-    Enterprise enterprise;
+    private Enterprise enterprise;
+
+    private RoleName role;
 
     public Employee() {
     }
 
-    public Employee(long id, String name, String email, RoleName role, Enterprise enterprise) {
-        this.id = id;
+    public Employee(String name, String email, Enterprise enterprise, RoleName role) {
         this.name = name;
         this.email = email;
-        this.role = role;
         this.enterprise = enterprise;
+        this.role = role;
     }
 
     public long getId() {
@@ -52,19 +52,19 @@ public class Employee {
         this.email = email;
     }
 
-    public RoleName getRole() {
-        return role;
-    }
-
-    public void setRole(RoleName role) {
-        this.role = role;
-    }
-
     public Enterprise getEnterprise() {
         return enterprise;
     }
 
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
+    }
+
+    public RoleName getRole() {
+        return role;
+    }
+
+    public void setRole(RoleName role) {
+        this.role = role;
     }
 }
