@@ -55,7 +55,7 @@ public class projectController {
     private final AtomicLong idEmployee = new AtomicLong(0);
     @GetMapping({"/pruebaEmpleado"})
     public List<Employee> getEmpleado(@RequestParam(value = "nameEmployee", defaultValue = "Pepito Perez") String nameEmployee,
-                                @RequestParam(value = "emailEmployee", defaultValue = "Pepito Perez") String emailEmployee,
+                                @RequestParam(value = "emailEmployee", defaultValue = "pepito@perez.com") String emailEmployee,
                                 @RequestParam(value = "nameEnterprise", defaultValue = "Artelak") String nameEnterprise,
                                 @RequestParam(value = "roleName", defaultValue = "Operador") String roleName
                                 ){
