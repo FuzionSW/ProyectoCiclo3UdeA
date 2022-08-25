@@ -1,13 +1,13 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.Models;
+package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
 
 import javax.persistence.*;
 
-@Entity //Es una anotación de la entidad para la gestión de la base de datos.
-@Table(name="Enterprise")
+@Entity
+@Table(name = "Enterprise")
 public class Enterprise {
-    @Id // Anotación de la llave primaria
-    @GeneratedValue(strategy = GenerationType.AUTO) //auto incrementable.
-    private int id; // Es el identificador en la base de datos
+    @Id
+    @GeneratedValue
+    private long id;
     private String name;
     private String document;
     private String phone;
@@ -16,18 +16,19 @@ public class Enterprise {
     public Enterprise() {
     }
 
-    public Enterprise(String name, String document, String phone, String addrees) {
+    public Enterprise(long id, String name, String document, String phone, String address) {
+        this.id = id;
         this.name = name;
         this.document = document;
         this.phone = phone;
-        this.address = addrees;
+        this.address = address;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -59,7 +60,8 @@ public class Enterprise {
         return address;
     }
 
-    public void setAddress(String addrees) {
-        this.address = addrees;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
+

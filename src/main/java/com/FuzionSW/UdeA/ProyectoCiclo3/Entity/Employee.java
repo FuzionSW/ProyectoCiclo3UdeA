@@ -1,4 +1,4 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.Models;
+package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
 
 import javax.persistence.*;
 
@@ -7,27 +7,32 @@ import javax.persistence.*;
 public class Employee {
     @Id // Anotación de la llave primaria
     @GeneratedValue(strategy = GenerationType.AUTO) //auto incrementable.
-    private int id; // Es el identificador en la base de datos
+    private long id; // Es el identificador en la base de datos
+
     private String name;
     private String email;
-    private String enterprise;
-    private String role;
+
+    @ManyToOne
+    @JoinColumn(name = "enterprise_id")
+    private Enterprise enterprise;
+
+    private RoleName role;
 
     public Employee() {
     }
 
-    public Employee(String name, String email, String enterprise, String role) {
+    public Employee(String name, String email, Enterprise enterprise, RoleName role) {
         this.name = name;
         this.email = email;
         this.enterprise = enterprise;
         this.role = role;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,19 +52,19 @@ public class Employee {
         this.email = email;
     }
 
-    public String getEnterprise() {
+    public Enterprise getEnterprise() {
         return enterprise;
     }
 
-    public void setEnterprise(String enterprise) {
+    public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
     }
 
-    public String getRole() {
+    public RoleName getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(RoleName role) {
         this.role = role;
     }
 }
