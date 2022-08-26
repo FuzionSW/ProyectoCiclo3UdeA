@@ -1,20 +1,34 @@
 <!doctype html>
 <html lang="es"
       xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/html_head.html}"/>
+<head>
+    <div th:replace="~{fragments/html_head.html}" />
+    <!-- Vincula el style.css-->
+    <link rel="stylesheet" type="text/css" href="../static/css/ingresos-y-egresos.css" th:href="@{/css/empresas.css}">
+</head>
 <body>
 <div th:replace="~{fragments/html_sidebar.html}" />
 <section class="home-section">
-    <div class="text">
-        <h1>Empresas</h1>
-    </div>
-    <div class="text">
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+    <div class="contenedor">
+        <header class="header">
+            <h1>Sistema de gestión de empresas</h1>
+        </header>
+        <main class="contenido">
+            <h1>Empresas</h1>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis rutrum gravida. Aliquam vel nunc sit amet nibh aliquam sollicitudin eu vitae elit. Duis varius turpis est, at feugiat metus blandit non. Mauris est nunc, ullamcorper nec egestas at, faucibus ac ex. Cras gravida ut odio eget vulputate. Suspendisse ut nunc cursus, vulputate tortor id, mollis magna. Proin mattis euismod magna. Suspendisse mattis, nunc vitae mattis iaculis, elit massa facilisis magna, ac consequat magna lacus sit amet lectus. Suspendisse a lacinia est, a semper turpis. Phasellus lobortis eget nibh in scelerisque. Morbi feugiat volutpat nisl, vehicula commodo augue volutpat at. Aenean aliquet tristique diam. Aenean maximus, quam non sollicitudin efficitur, est sapien pharetra odio, eget aliquam justo urna eu eros. Donec nec tincidunt tortor.
+                <br><br>
+
+                Maecenas pharetra pretium quam ut posuere. Quisque luctus sem purus. Phasellus vel nibh sed erat interdum placerat eget a dui. Vivamus viverra pharetra congue. Sed pretium mi eu dui congue pulvinar. Donec felis risus, malesuada quis tristique faucibus, vestibulum non urna. Fusce nec orci pulvinar, blandit velit quis, finibus neque. Mauris malesuada metus eget ornare pellentesque. Nunc pharetra ante eget ullamcorper finibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla maximus a dolor non condimentum. Suspendisse convallis ullamcorper justo.
+                <br><br>
+
+                Nullam ut erat sit amet elit ultricies tempor vel eget magna. Vivamus vitae diam purus. Fusce semper nisl a nulla congue feugiat. Maecenas et tincidunt felis, dapibus rhoncus sapien. Maecenas tortor tortor, sagittis ac mattis sed, ullamcorper et orci. Pellentesque quis mollis massa. Donec lacinia turpis sapien, eu tincidunt dui rutrum elementum. Maecenas dictum et metus eget aliquam. Sed imperdiet lacinia vulputate. Vivamus mauris arcu, faucibus pulvinar laoreet sed, scelerisque et dui.
+            </p>
+        </main>
     </div>
     <div th:replace="~{fragments/html_footer.html}" />
 </section>
-<script src="../../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
+<script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
 </body>
 </html>
