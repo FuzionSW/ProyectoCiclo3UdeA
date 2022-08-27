@@ -6,14 +6,29 @@ import javax.persistence.*;
 @Table(name = "Enterprise")
 public class Enterprise {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false, length = 45)
     private String name;
+
+    @Column(nullable = false, unique = true)
     private String document;
+
+    @Column(nullable = false, length = 10)
     private String phone;
+
+    @Column(nullable = false, length = 45)
     private String address;
 
     public Enterprise() {
+    }
+
+    public Enterprise(String name, String document, String phone, String address) {
+        this.name = name;
+        this.document = document;
+        this.phone = phone;
+        this.address = address;
     }
 
     public Enterprise(long id, String name, String document, String phone, String address) {
@@ -62,6 +77,17 @@ public class Enterprise {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Enterprise{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", document='" + document + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
 

@@ -49,6 +49,10 @@
     text-underline-offset: 8px;
 }
 
+.contenedor .contenido p{
+    padding-bottom: 98px;
+}
+
 .boton{
     margin-top: 30px;
     font-size: 18px;

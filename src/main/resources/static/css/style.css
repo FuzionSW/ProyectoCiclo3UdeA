@@ -239,12 +239,13 @@
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
-    min-height: 100vh;
+    height: 100%;
     top: 0;
     margin-left: 78px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
     z-index: 2;
+    padding-bottom: 78px;
 }
 
 .sidebar.open ~ .home-section{
@@ -261,18 +262,20 @@
 
 .foot{
     background-color: #11101d;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 78px);
     min-height: 75px;
     display: flex;
     justify-content: right;
     align-items: center;
     text-align: center;
+    /* border-top-right-radius: 15px; */
 }
 
 body{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 .foot div.footer p{
