@@ -1,7 +1,7 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3;
 
-import com.FuzionSW.UdeA.ProyectoCiclo3.Entity.Enterprise;
-import com.FuzionSW.UdeA.ProyectoCiclo3.Repository.EnterpriseRepository;
+import com.FuzionSW.UdeA.ProyectoCiclo3.entities.Enterprise;
+import com.FuzionSW.UdeA.ProyectoCiclo3.repositories.EnterpriseRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

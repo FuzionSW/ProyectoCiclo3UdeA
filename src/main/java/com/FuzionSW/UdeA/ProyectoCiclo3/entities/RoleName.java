@@ -1,4 +1,4 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.Entity;
+package com.FuzionSW.UdeA.ProyectoCiclo3.entities;
 
 public enum RoleName {
     ADMIN ("Admin"),
