@@ -1,4 +1,4 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.services.employee;
+package com.FuzionSW.UdeA.ProyectoCiclo3.services.enterprise;
 
 public class EnterpriseNotFoundException extends Throwable {
     public EnterpriseNotFoundException(String message) {

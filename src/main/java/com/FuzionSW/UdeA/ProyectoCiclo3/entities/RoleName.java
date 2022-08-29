@@ -1,23 +1,16 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3.entities;
 
 public enum RoleName {
-    ADMIN ("Admin"),
+    ADMIN ("Administrador"),
     OPERATOR ("Operador");
 
-    private String roleName;
+    private final String displayValue;
 
-    RoleName() {
+    private RoleName(String displayValue) {
+        this.displayValue = displayValue;
     }
 
-    RoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public String getDisplayValue() {
+        return displayValue;
     }
 }

@@ -16,10 +16,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
 public class EnterpriseRepositoryTests {
-    @Autowired private EnterpriseRepository enterpriseRepository;
+    @Autowired
+    private EnterpriseRepository enterpriseRepository;
 
     @Test
-    public void testAddNew() {
+    public void testAddNewEnterprise() {
         Enterprise enterprise = new Enterprise();
         enterprise.setName("Artelak");
         enterprise.setDocument("81238456-9");
@@ -32,7 +33,7 @@ public class EnterpriseRepositoryTests {
     }
 
     @Test
-    public void testListAll() {
+    public void testListAllEnterprises() {
         Iterable<Enterprise> enterprises = enterpriseRepository.findAll();
         assertThat(enterprises).hasSizeGreaterThan(0);
 
@@ -42,7 +43,7 @@ public class EnterpriseRepositoryTests {
     }
 
     @Test
-    public void testUpdate() {
+    public void testUpdateEnterprise() {
         long enterpriseId = 1;
         Optional<Enterprise> optionalEnterprise = enterpriseRepository.findById(enterpriseId);
         Enterprise enterprise = optionalEnterprise.get();
@@ -54,7 +55,7 @@ public class EnterpriseRepositoryTests {
     }
 
     @Test
-    public void testGet(){
+    public void testGetEnterprise(){
         long enterpriseId = 1;
         Optional<Enterprise> optionalEnterprise = enterpriseRepository.findById(enterpriseId);
 
@@ -63,7 +64,7 @@ public class EnterpriseRepositoryTests {
     }
 
     @Test
-    public void testDelete(){
+    public void testDeleteEnterprise(){
         long enterpriseId = 1;
         enterpriseRepository.deleteById(enterpriseId);
 

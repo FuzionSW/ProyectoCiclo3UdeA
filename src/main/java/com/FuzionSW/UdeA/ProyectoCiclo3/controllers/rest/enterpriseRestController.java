@@ -1,8 +1,8 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3.controllers.rest;
 
 import com.FuzionSW.UdeA.ProyectoCiclo3.entities.Enterprise;
-import com.FuzionSW.UdeA.ProyectoCiclo3.services.employee.EnterpriseNotFoundException;
-import com.FuzionSW.UdeA.ProyectoCiclo3.services.employee.EnterpriseService;
+import com.FuzionSW.UdeA.ProyectoCiclo3.services.enterprise.EnterpriseNotFoundException;
+import com.FuzionSW.UdeA.ProyectoCiclo3.services.enterprise.EnterpriseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

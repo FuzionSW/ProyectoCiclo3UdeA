@@ -1,8 +1,8 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3.controllers.front;
 
 import com.FuzionSW.UdeA.ProyectoCiclo3.entities.Enterprise;
-import com.FuzionSW.UdeA.ProyectoCiclo3.services.employee.EnterpriseNotFoundException;
-import com.FuzionSW.UdeA.ProyectoCiclo3.services.employee.EnterpriseService;
+import com.FuzionSW.UdeA.ProyectoCiclo3.services.enterprise.EnterpriseNotFoundException;
+import com.FuzionSW.UdeA.ProyectoCiclo3.services.enterprise.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,6 +79,6 @@ public class enterpriseFrontController {
         } catch (EnterpriseNotFoundException e){
             ra.addFlashAttribute("message","No se puede encontrar alguna empresa con ID: " + id);
         }
-        return "redirect:/enterprises";
+        return "redirect:/front/enterprises";
     }
 }

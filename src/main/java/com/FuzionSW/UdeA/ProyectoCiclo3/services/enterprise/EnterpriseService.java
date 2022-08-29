@@ -1,11 +1,10 @@
-package com.FuzionSW.UdeA.ProyectoCiclo3.services.employee;
+package com.FuzionSW.UdeA.ProyectoCiclo3.services.enterprise;
 
 import com.FuzionSW.UdeA.ProyectoCiclo3.entities.Enterprise;
 import com.FuzionSW.UdeA.ProyectoCiclo3.repositories.EnterpriseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +15,7 @@ public class EnterpriseService {
 
     //Metodo que retornará la lista de empresas usando metodos heredados del jpaRepository
     public List<Enterprise> getEnterpriseList(){
-        return (List<Enterprise>) enterpriseRepository.findAll();
+        return enterpriseRepository.findAll();
     }
 
     public Enterprise getEnterprise(long id) throws EnterpriseNotFoundException {
