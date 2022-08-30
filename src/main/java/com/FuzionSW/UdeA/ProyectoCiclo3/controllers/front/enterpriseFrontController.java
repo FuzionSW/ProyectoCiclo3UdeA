@@ -22,14 +22,14 @@ public class enterpriseFrontController {
     public String showEnterpriseList(Model model) {
         List<Enterprise> enterpriseList = enterpriseService.getEnterpriseList();
         model.addAttribute("enterpriseList", enterpriseList);
-        return "/pages/enterprise/enterprise";
+        return "pages/enterprise/enterprise";
     }
 
     @GetMapping(value= "/front/enterprises/new")
     public String showNewEnterprise(Model model) {
         model.addAttribute("enterprise", new Enterprise());
         model.addAttribute("pageTitle","Crear una nueva empresa");
-        return "/pages/enterprise/new-enterprise";
+        return "pages/enterprise/new-enterprise";
     }
 
     @PostMapping(value = "/front/enterprises/save")
@@ -64,7 +64,7 @@ public class enterpriseFrontController {
             Enterprise enterprise = enterpriseService.getEnterprise(id);
             model.addAttribute("enterprise", enterprise);
             model.addAttribute("pageTitle","Modificar empresa - Id: " + id);
-            return ("/pages/enterprise/edit-enterprise");
+            return ("pages/enterprise/edit-enterprise");
         } catch (EnterpriseNotFoundException e){
             ra.addFlashAttribute("message","La empresa no ha sido modificada.");
             return "redirect:/front/enterprises";

@@ -36,7 +36,7 @@ public class employeeFrontController {
         List<Enterprise> enterpriseList = enterpriseService.getEnterpriseList();
         model.addAttribute("enterpriseList", enterpriseList);
         model.addAttribute("pageTitle","Crear un nuevo usuario");
-        return "/pages/employee/new-employee";
+        return "pages/employee/new-employee";
     }
 
     @PostMapping(value = "/front/users/save")
@@ -74,7 +74,7 @@ public class employeeFrontController {
             Employee employee = employeeService.getEmployee(id);
             model.addAttribute("employee", employee);
             model.addAttribute("pageTitle","Modificar usuario- Id: " + id);
-            return ("/pages/employee/edit-employee");
+            return ("pages/employee/edit-employee");
         } catch (EmployeeNotFoundException e){
             ra.addFlashAttribute("message","El usuario no ha sido modificado.");
             return "redirect:/front/users";

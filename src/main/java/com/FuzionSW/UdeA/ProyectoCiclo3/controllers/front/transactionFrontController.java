@@ -39,7 +39,7 @@ public class transactionFrontController {
     public String showTransactionList(Model model) {
         List< Transaction> transactionList = transactionService.getTransactionList();
         model.addAttribute("transactionList", transactionList);
-        return "/pages/transaction/transaction";
+        return "pages/transaction/transaction";
     }
 
     @GetMapping(value= "/front/movements/new")
@@ -52,7 +52,7 @@ public class transactionFrontController {
 
         model.addAttribute("transaction", new Transaction());
         model.addAttribute("pageTitle","Crear un nuevo movimiento");
-        return "/pages/transaction/new-transaction";
+        return "pages/transaction/new-transaction";
     }
 
     @PostMapping(value = "/front/movements/save")
@@ -91,7 +91,7 @@ public class transactionFrontController {
             Transaction transaction = transactionService.getTransaction(id);
             model.addAttribute("transaction", transaction);
             model.addAttribute("pageTitle","Modificar movimiento - Id: " + id);
-            return ("/pages/transaction/edit-transaction");
+            return ("pages/transaction/edit-transaction");
         } catch (TransactionNotFoundException e){
             ra.addFlashAttribute("message","El movimiento ha sido modificado.");
             return "redirect:/front/movements";
