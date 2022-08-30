@@ -26,16 +26,28 @@
 <!--                </p>-->
 <!--            </main>-->
             <div class="widget-1">
-                <h3>Sistema de gestión de ingresos y gastos</h3>
-                <button class="boton" type="button" th:onclick="|window.location.href='/front/transaction'|">Acceder</button>
+                <div>
+                    <h3>Sistema de gestión de ingresos y gastos</h3>
+                </div>
+                <div>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/front/movements'|">Acceder</button>
+                </div>
             </div>
             <div class="widget-2">
-                <h3>Sistema de gestión de usuarios</h3>
-                <button class="boton" type="button" th:onclick="|window.location.href='/front/users'|">Acceder</button>
+                <div>
+                    <h3>Sistema de gestión de usuarios</h3>
+                </div>
+                <div>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/front/users'|">Acceder</button>
+                </div>
             </div>
             <div class="widget-3">
-                <h3>Sistema de gestión de empresas</h3>
-                <button class="boton" type="button" th:onclick="|window.location.href='/front/enterprises'|">Acceder</button>
+                <div>
+                    <h3>Sistema de gestión de empresas</h3>
+                </div>
+                <div>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/front/enterprises'|">Acceder</button>
+                </div>
             </div>
         </div>
         <div th:replace="~{fragments/html_footer.html}" />

@@ -32,8 +32,8 @@ public class employeeFrontController {
 
     @GetMapping(value= "/front/users/new")
     public String showNewEmployee(Model model) {
-        List<Enterprise> enterpriseList = enterpriseService.getEnterpriseList();
         model.addAttribute("employee", new Employee());
+        List<Enterprise> enterpriseList = enterpriseService.getEnterpriseList();
         model.addAttribute("enterpriseList", enterpriseList);
         model.addAttribute("pageTitle","Crear un nuevo usuario");
         return "/pages/employee/new-employee";
@@ -69,9 +69,10 @@ public class employeeFrontController {
     public String showEditEmployee(@PathVariable("id") long id, Model model, RedirectAttributes ra){
         try {
             List<Enterprise> enterpriseList = enterpriseService.getEnterpriseList();
+            model.addAttribute("enterpriseList", enterpriseList);
+
             Employee employee = employeeService.getEmployee(id);
             model.addAttribute("employee", employee);
-            model.addAttribute("enterpriseList", enterpriseList);
             model.addAttribute("pageTitle","Modificar usuario- Id: " + id);
             return ("/pages/employee/edit-employee");
         } catch (EmployeeNotFoundException e){

@@ -26,7 +26,7 @@
         [[${message}]]
       </div>
 
-      <div style="padding-bottom: 98px">
+      <div>
         <table class="table table-bordered">
           <thead>
           <tr>
@@ -34,7 +34,9 @@
             <th class="text-center">Nombre</th>
             <th class="text-center">e-Mail</th>
             <th class="text-center">Rol</th>
-            <th class="text-center">Acción</th>
+            <th class="text-center">Empresa</th>
+            <th class="text-center">Modificar</th>
+            <th class="text-center">Eliminar</th>
           </tr>
           </thead>
           <tbody>
@@ -44,10 +46,13 @@
               <td>[[${employee.name}]]</td>
               <td>[[${employee.email}]]</td>
               <td>[[${employee.role}]]</td>
-              <td style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+              <td>[[${employee.enterprise.name}]]</td>
+              <td>
                 <button type="button" class="btn btn-success" th:onclick="|window.location.href='@{'/front/users/edit/' + ${employee.id}}'|">
                   <i class="fas fa-edit"></i>
                 </button>
+              </td>
+              <td>
                 <button type="button" class="btn btn-danger" th:onclick="|window.location.href='@{'/front/users/delete/' + ${employee.id}}'|">
                   <i class="far fa-trash-alt"></i>
                 </button>
@@ -56,6 +61,13 @@
           </th:block>
           </tbody>
         </table>
+      </div>
+      <div class="contenedor-boton">
+        <button class="boton" type="button" th:onclick="|window.location.href='/'|">
+          <i class="fa-solid fa-circle-left"></i>
+        </button>
+      </div>
+      <div style="padding-bottom: 98px">
       </div>
     </main>
   </div>

@@ -36,7 +36,7 @@ public class EnterpriseService {
         enterpriseRepository.save(enterprise);
     }
 
-    public boolean delete(Long id) throws EnterpriseNotFoundException {
+    public boolean isEnterpriseDeleted(Long id) throws EnterpriseNotFoundException {
         boolean isRemoved = false;
 
         Long count = enterpriseRepository.countById(id);

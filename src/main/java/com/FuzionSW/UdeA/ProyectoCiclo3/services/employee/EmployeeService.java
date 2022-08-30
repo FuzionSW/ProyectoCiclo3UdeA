@@ -10,10 +10,9 @@ import java.util.Optional;
 
 @Service
 public class EmployeeService {
-    @Autowired                                         //Conectamos esta clase con el repositorio de Empresa
-    private EmployeeRepository employeeRepository; //Creamos un objeto tipo EmpresaRepository para poder usar los metodos que dicha clase hereda
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
-    //Metodo que retornará la lista de empresas usando metodos heredados del jpaRepository
     public List<Employee> getEmployeeList(){
         return employeeRepository.findAll();
     }
@@ -36,7 +35,7 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
-    public boolean delete(Long id) throws EmployeeNotFoundException {
+    public boolean isEmployeeDeleted(Long id) throws EmployeeNotFoundException {
         boolean isRemoved = false;
 
         Long count = employeeRepository.countById(id);

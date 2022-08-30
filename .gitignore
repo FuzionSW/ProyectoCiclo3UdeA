@@ -1,4 +1,7 @@
 HELP.md
+.mvn
+.settings/
+Repositorio de Mauricio
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

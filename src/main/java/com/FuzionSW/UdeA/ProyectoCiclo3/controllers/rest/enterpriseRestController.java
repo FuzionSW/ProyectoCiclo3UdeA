@@ -50,7 +50,7 @@ public class enterpriseRestController {
 
     @DeleteMapping(value = "/enterprises/{id}")
     public ResponseEntity<Long> deleteEnterprise(@PathVariable Long id) throws EnterpriseNotFoundException {
-        boolean isRemoved = this.enterpriseService.delete(id);
+        boolean isRemoved = this.enterpriseService.isEnterpriseDeleted(id);
 
         if (!isRemoved) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

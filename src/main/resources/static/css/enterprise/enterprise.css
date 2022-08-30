@@ -5,7 +5,7 @@
 
 .contenedor{
     width: 90%;
-    max-width: 1000px;
+    max-width: 100%;
     padding-top: 0;
     margin: 20px auto;
     display: grid;

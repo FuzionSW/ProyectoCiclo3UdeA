@@ -1,32 +1,49 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3.entities;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Past;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
-@Table (name = "Transaction")
+@Table (name = "transaction")
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false, length = 45)
     private String concept;
-    private double amount;
+
+    @Column(nullable = false, length = 45)
+    private float amount;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @Past
+    private LocalDate createdAt;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDateTime updatedAt;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id")
-    Employee employee = new Employee();
+    @JoinColumn(name = "user_id")
+    private Employee user;
 
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
-    Enterprise enterprise = new Enterprise();
+    private Enterprise enterprise;
 
     public Transaction() {
     }
 
-    public Transaction(long id, String concept, double amount, Employee employee, Enterprise enterprise) {
-        this.id = id;
+    public Transaction(String concept, float amount, LocalDate createdAt, LocalDateTime updatedAt, Employee user, Enterprise enterprise) {
         this.concept = concept;
         this.amount = amount;
-        this.employee = employee;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.user = user;
         this.enterprise = enterprise;
     }
 
@@ -46,20 +63,36 @@ public class Transaction {
         this.concept = concept;
     }
 
-    public double getAmount() {
+    public float getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(float amount) {
         this.amount = amount;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public LocalDate getCreatedAt() {
+        return createdAt;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Employee getUser() {
+        return user;
+    }
+
+    public void setUser(Employee user) {
+        this.user = user;
     }
 
     public Enterprise getEnterprise() {

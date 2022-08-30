@@ -49,7 +49,7 @@ public class employeeRestController {
 
     @DeleteMapping(value = "/users/{id}")
     public ResponseEntity<Long> deleteEmployee(@PathVariable Long id) throws EmployeeNotFoundException {
-        boolean isRemoved = this.employeeService.delete(id);
+        boolean isRemoved = this.employeeService.isEmployeeDeleted(id);
 
         if (!isRemoved) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
