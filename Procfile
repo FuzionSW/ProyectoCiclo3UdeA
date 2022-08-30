@@ -1,3 +1,3 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.FuzionSW.UdeA.ProyectoCiclo3
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* *
 
 
