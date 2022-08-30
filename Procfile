@@ -1,3 +1,3 @@
-web: java -Dserver.port=$PORT -jar target/com.FuzionSW.UdeA-0.0.1-SNAPSHOT.jar
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.FuzionSW.UdeA.ProyectoCiclo3
 
 
