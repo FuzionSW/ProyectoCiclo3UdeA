@@ -1,1 +1,3 @@
-web: java -Dserver.port=$PORT -jar target/0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/com.FuzionSW.UdeA-0.0.1-SNAPSHOT.jar
+
+
