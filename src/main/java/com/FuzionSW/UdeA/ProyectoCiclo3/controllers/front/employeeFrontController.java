@@ -27,7 +27,7 @@ public class employeeFrontController {
     public String showEmployeeList(Model model) {
         List<Employee> employeeList = employeeService.getEmployeeList();
         model.addAttribute("employeeList", employeeList);
-        return "/employee";
+        return "employee";
     }
 
     @GetMapping(value= "/front/users/new")
