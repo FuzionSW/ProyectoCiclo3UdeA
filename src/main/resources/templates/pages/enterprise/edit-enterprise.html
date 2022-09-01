@@ -1,63 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-  <div th:replace="~{fragments/html_head.html}" />
-  <!-- Vincula el style.css-->
-  <link rel="stylesheet" type="text/css" href="../static/css/enterprise/enterprise.css" th:href="@{/css/enterprise/enterprise.css}">
+  <link rel="stylesheet" type="text/css" href="../static/css/transaction/transaction.css" th:href="@{/css/transaction/transaction.css}">
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+  <div th:replace="~{fragments/html_head.html}" />
 </head>
 <body>
-<div th:replace="~{fragments/html_sidebar.html}" />
-<section class="home-section">
-  <div class="contenedor">
-    <header class="header">
-      <h1>Sistema de gestión de empresas</h1>
-    </header>
-    <main class="contenido">
-      <h1>[[${pageTitle}]]</h1>
-      <br>
-      <div>
-        <form th:action="@{/front/enterprises/edit}" method="post" th:object="${enterprise}">
-          <input type="hidden" th:field="*{id}">
-          <div class = "border border-secondary rounded p-3">
-            <div class="form-group row">
-              <label class = "col-sm-4 col-form-label" style="font-size: 20px">Nombre: </label>
-              <div class="col-sm-8">
-                <input type="text" th:field="*{name}" class="form-control" style="font-size: 20px" required minlength="3" maxlength="45">
+<div class="contenedor">
+  <div th:replace="~{fragments/html_sidebar.html}" />
+
+  <div class="contenido">
+    <section class="home-section">
+      <header class="header">
+        <h1>Sistema de gestión de empresas</h1>
+      </header>
+      <section class="content-section">
+        <h1>[[${pageTitle}]]</h1>
+        <br>
+        <div>
+          <form th:action="@{/front/enterprises/edit}" method="post" th:object="${enterprise}">
+            <input type="hidden" th:field="*{id}">
+            <div class = "border border-secondary rounded p-3">
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Nombre: </label>
+                <div class="col-sm-8">
+                  <input type="text" th:field="*{name}" class="form-control" style="font-size: 20px" required minlength="3" maxlength="45">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">NIT: </label>
+                <div class="col-sm-8">
+                  <input type="text" th:field="*{document}" class="form-control" style="font-size: 20px" required minlength="5" maxlength="11">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Teléfono: </label>
+                <div class="col-sm-8">
+                  <input type="tel" pattern="[0-9]{10}" th:field="*{phone}" class="form-control" style="font-size: 20px">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Dirección: </label>
+                <div class="col-sm-8">
+                  <input type="text" th:field="*{address}" class="form-control" style="font-size: 20px" required minlength="5" maxlength="45">
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary m-2" style="background-color: #1d1b31; border-color: #1d1b31">Guardar</button>
+                <button type="button" class="btn btn-secondary m-2" onclick="cancelNuevaEmpresa()">Cancelar</button>
               </div>
             </div>
-            <div class="form-group row">
-              <label class = "col-sm-4 col-form-label" style="font-size: 20px">NIT: </label>
-              <div class="col-sm-8">
-                <input type="text" th:field="*{document}" class="form-control" style="font-size: 20px" required minlength="10" maxlength="10">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class = "col-sm-4 col-form-label" style="font-size: 20px">Teléfono: </label>
-              <div class="col-sm-8">
-                <input type="tel" pattern="[0-9]{10}" th:field="*{phone}" class="form-control" style="font-size: 20px">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class = "col-sm-4 col-form-label" style="font-size: 20px">Dirección: </label>
-              <div class="col-sm-8">
-                <input type="text" th:field="*{address}" class="form-control" style="font-size: 20px" required minlength="5" maxlength="45">
-              </div>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary m-2" style="background-color: #1d1b31; border-color: #1d1b31">Guardar</button>
-              <button type="button" class="btn btn-secondary m-2" onclick="cancelNuevaEmpresa()">Cancelar</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </main>
+          </form>
+        </div>
+      </section>
+    </section>
   </div>
+
   <div th:replace="~{fragments/html_footer.html}" />
-</section>
+</div>
 <script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
 <script type="text/javascript">
   function cancelNuevaEmpresa() {
