@@ -1,5 +1,6 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3.entities;
 
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

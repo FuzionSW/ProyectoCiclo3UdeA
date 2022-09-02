@@ -20,7 +20,10 @@
         <h1>Usuarios</h1>
         <br>
         <div class="contenedor-boton">
-          <button class="boton" type="button" th:onclick="|window.location.href='/front/users/new'|">Nuevo usuario</button>
+          <button type="button" class="btn btn-primary" th:onclick="|window.location.href='/front/users/new'|">
+            Nuevo
+            <i class="fa-sharp fa-solid fa-circle-plus"></i>
+          </button>
         </div>
         <br>
         <div th:if="${message}" class="alert alert-success text-center">
@@ -64,9 +67,10 @@
           </table>
         </div>
         <div class="contenedor-boton" style="margin-top: 25px">
-          <button class="boton" type="button" th:onclick="|window.location.href='/'|">
+          <button type="button" class="btn btn-primary" th:onclick="|window.location.href='/'|">
             <i class="fa-solid fa-circle-left"></i>
           </button>
+
         </div>
 
       </section>
