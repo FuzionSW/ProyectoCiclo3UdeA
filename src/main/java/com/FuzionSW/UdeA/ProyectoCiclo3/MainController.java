@@ -10,19 +10,4 @@ public class MainController
     public String showHomePage() {
         return "index";
     }
-
-    @GetMapping(value = "/ingresos-y-egresos")
-    public String showIngresosYEgresos() {
-        return "/pages/ingresos-y-egresos";
-    }
-
-    @GetMapping(value= "/usuarios")
-    public String showUsuarios() {
-        return "/pages/usuarios";
-    }
-
-    @GetMapping(value= "/empresas")
-    public String showEmpresas() {
-        return "/pages/empresas";
-    }
 }

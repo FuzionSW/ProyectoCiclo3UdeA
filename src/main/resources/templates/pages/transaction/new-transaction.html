@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/css/transaction/transaction.css" th:href="@{/css/transaction/transaction.css}">
+
+  <div th:replace="~{fragments/html_head.html}" />
+</head>
+<body>
+<div class="contenedor">
+  <div th:replace="~{fragments/html_sidebar.html}" />
+
+  <div class="contenido">
+    <section class="home-section">
+      <header class="header">
+        <h1>Sistema de gestión de ingresos y gastos</h1>
+      </header>
+      <section class="content-section">
+        <h1>[[${pageTitle}]]</h1>
+        <br>
+        <div>
+          <form th:action="@{/front/movements/save}" method="post" th:object="${transaction}">
+            <input type="hidden" th:field="*{id}">
+            <div class = "border border-secondary rounded p-3">
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Nombre: </label>
+                <div class="col-sm-8">
+                  <input type="text" th:field="*{concept}" class="form-control" style="font-size: 20px" required minlength="3" maxlength="45">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Monto: </label>
+                <div class="col-sm-8">
+                  <input type="number" step="0.1" placeholder="0.1" th:field="*{amount}" class="form-control" style="font-size: 20px" required>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Usuario: </label>
+                <div class="col-sm-8">
+                  <select th:field="*{user}" class="form-control" required>
+                    <th:block th:each="employee : ${employeeList}">
+                      <option th:text="${employee.name}" th:value="${employee.id}"></option>
+                    </th:block>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Empresa: </label>
+                <div class="col-sm-8">
+                  <select th:field="*{enterprise}" class="form-control" required>
+                    <th:block th:each="enterprise : ${enterpriseList}">
+                      <option th:text="${enterprise.name}" th:value="${enterprise.id}"></option>
+                    </th:block>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class = "col-sm-4 col-form-label" style="font-size: 20px">Fecha: </label>
+                <div class="col-sm-8">
+                  <input type="date" th:field="*{createdAt}" class="form-control" style="font-size: 20px" required>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary m-2" style="background-color: #1d1b31; border-color: #1d1b31">Guardar</button>
+                <button type="button" class="btn btn-secondary m-2" onclick="cancelNuevoMovimiento()">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <div th:replace="~{fragments/html_footer.html}" />
+</div>
+<script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
+<script type="text/javascript">
+  function cancelNuevoMovimiento() {
+    window.location = "[[@{/front/movements}]]";
+  }
+</script>
+</body>
+</html>

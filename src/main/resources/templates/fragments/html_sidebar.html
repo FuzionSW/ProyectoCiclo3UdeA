@@ -12,6 +12,7 @@
     <hr class="separator">
     <p class="title">Menú</p>
     <hr class="separator">
+
     <ul class="nav-list">
       <li>
         <a th:href="@{/}">
@@ -21,32 +22,25 @@
         <span class="tooltip">Home</span>
       </li>
       <li>
-        <a th:href="@{/ingresos-y-egresos}">
+        <a th:href="@{/front/movements}">
           <i class="fa-solid fa-money-check-dollar"></i>
           <span class="links_name">Ingresos y egresos</span>
         </a>
         <span class="tooltip">Ingresos y egresos</span>
       </li>
       <li>
-        <a th:href="@{/usuarios}">
+        <a th:href="@{/front/users}">
           <i class="fa-solid fa-users"></i>
           <span class="links_name">Usuarios</span>
         </a>
         <span class="tooltip">Usuarios</span>
       </li>
       <li>
-        <a th:href="@{/empresas}">
+        <a th:href="@{/front/enterprises}">
           <i class="fa-solid fa-building"></i>
           <span class="links_name">Empresas</span>
         </a>
         <span class="tooltip">Empresas</span>
-      </li>
-      <li class="logout">
-        <a href="#">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <span class="links_name">Salir</span>
-        </a>
-        <span class="tooltip">Salir</span>
       </li>
     </ul>
   </div>

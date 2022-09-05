@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/employee/employee.css" th:href="@{/css/employee/employee.css}">
+
+    <div th:replace="~{fragments/html_head.html}" />
+</head>
+<body>
+<div class="contenedor">
+    <div th:replace="~{fragments/html_sidebar.html}" />
+
+    <div class="contenido">
+        <section class="home-section">
+            <header class="header">
+                <h1>Sistema de gestión de empresas</h1>
+            </header>
+            <section class="content-section">
+                <h1>Empresas</h1>
+                <br>
+                <div class="contenedor-boton">
+                    <button type="button" class="btn btn-primary" th:onclick="|window.location.href='/front/enterprises/new'|">
+                        Nuevo
+                        <i class="fa-sharp fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+                <br>
+                <div th:if="${message}" class="alert alert-success text-center">
+                    [[${message}]]
+                </div>
+                <div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Id</th>
+                            <th class="text-center">Dirección</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Teléfono</th>
+                            <th class="text-center">NIT</th>
+                            <th class="text-center">Modificar</th>
+                            <th class="text-center">Eliminar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="enterprise : ${enterpriseList}">
+                            <tr>
+                                <td>[[${enterprise.id}]]</td>
+                                <td>[[${enterprise.name}]]</td>
+                                <td>[[${enterprise.address}]]</td>
+                                <td>[[${enterprise.phone}]]</td>
+                                <td>[[${enterprise.document}]]</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" th:onclick="|window.location.href='@{'/front/enterprises/edit/' + ${enterprise.id}}'|">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" th:onclick="|window.location.href='@{'/front/enterprises/delete/' + ${enterprise.id}}'|">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="contenedor-boton" style="margin-top: 25px">
+                    <button type="button" class="btn btn-primary" th:onclick="|window.location.href='/'|">
+                        <i class="fa-solid fa-circle-left"></i>
+                    </button>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <div th:replace="~{fragments/html_footer.html}" />
+</div>
+<script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+</html>
