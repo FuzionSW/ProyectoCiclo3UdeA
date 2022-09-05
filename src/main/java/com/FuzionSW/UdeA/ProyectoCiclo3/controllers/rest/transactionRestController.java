@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class transactionRestController {
     private final TransactionService transactionService;
@@ -15,9 +18,19 @@ public class transactionRestController {
         this.transactionService = transactionService;
     }
 
-    @GetMapping({"/enterprises/{id}/movements"})
+    @GetMapping({"/movements/{id}"})
     public Transaction getMovement(@PathVariable long id) throws TransactionNotFoundException {
         return this.transactionService.getTransaction(id);
+    }
+
+    @GetMapping({"/movements"})
+    public List<Transaction> getMovements(@PathVariable long id) throws TransactionNotFoundException {
+        return this.transactionService.getTransactionList();
+    }
+
+    @GetMapping({"/enterprises/{id}/movements"})
+    public ArrayList<Transaction> getEnterpriseMovement(@PathVariable long id) throws TransactionNotFoundException {
+        return this.transactionService.findByEnterprise(id);
     }
 
     @PostMapping({"/enterprises/{id}/movements"})
