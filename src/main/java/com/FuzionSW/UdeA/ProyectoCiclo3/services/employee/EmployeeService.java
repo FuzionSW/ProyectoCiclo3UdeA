@@ -17,6 +17,11 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    //Metodo para buscar empleados por empresa
+    public List<Employee> getEmployeeListByEnterpriseId(Long id){
+        return employeeRepository.findByEnterprise(id);
+    }
+
     public Employee getEmployee(long id) throws EmployeeNotFoundException {
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
 
