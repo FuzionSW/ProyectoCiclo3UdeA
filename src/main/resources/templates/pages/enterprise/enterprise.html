@@ -38,6 +38,8 @@
                             <th class="text-center">Nombre</th>
                             <th class="text-center">Teléfono</th>
                             <th class="text-center">NIT</th>
+                            <th class="text-center">Empleados</th>
+                            <th class="text-center">Movimientos</th>
                             <th class="text-center">Modificar</th>
                             <th class="text-center">Eliminar</th>
                         </tr>
@@ -50,6 +52,21 @@
                                 <td>[[${enterprise.address}]]</td>
                                 <td>[[${enterprise.phone}]]</td>
                                 <td>[[${enterprise.document}]]</td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info">
+                                        <a th:href="@{/front/enterprises/{id}/employees (id=${enterprise.id})}">
+                                            <i class="fa-sharp fa-solid fa-eye"></i>
+                                        </a>
+                                     </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning">
+                                        <a th:href="@{/front/enterprises/{id}/movements (id=${enterprise.id})}">
+                                            <i class="fa-sharp fa-solid fa-eye"></i>
+                                        </a>
+                                    </button>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-success" th:onclick="|window.location.href='@{'/front/enterprises/edit/' + ${enterprise.id}}'|">
                                         <i class="fas fa-edit"></i>

@@ -29,7 +29,7 @@ public class transactionRestController {
     }
 
     @GetMapping({"/enterprises/{id}/movements"})
-    public ArrayList<Transaction> getEnterpriseMovement(@PathVariable long id) throws TransactionNotFoundException {
+    public List<Transaction> getEnterpriseMovement(@PathVariable long id) throws TransactionNotFoundException {
         return this.transactionService.findByEnterprise(id);
     }
 

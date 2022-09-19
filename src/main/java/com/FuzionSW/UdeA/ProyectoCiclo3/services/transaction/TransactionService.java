@@ -1,5 +1,6 @@
 package com.FuzionSW.UdeA.ProyectoCiclo3.services.transaction;
 
+import com.FuzionSW.UdeA.ProyectoCiclo3.entities.Employee;
 import com.FuzionSW.UdeA.ProyectoCiclo3.entities.Transaction;
 import com.FuzionSW.UdeA.ProyectoCiclo3.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +63,16 @@ public class TransactionService {
         return transactionRepository.findByEmployee(id);
     }
 
-    public ArrayList<Transaction> findByEnterprise(Long id) { //Obtener movimientos teniendo en cuenta el id de la empresa a la que pertencen los empleados que la registraron
+    public List<Transaction> findByEnterprise(Long id) { //Obtener movimientos teniendo en cuenta el id de la empresa a la que pertencen los empleados que la registraron
         return transactionRepository.findByEnterprise(id);
+    }
+
+    //Metodo para buscar empleados por empresa
+    public List<Transaction> getMovementListByEnterpriseId(Long id){
+        return transactionRepository.findByEnterprise(id);
+    }
+
+    public float getAmountByEnterprise(Long id){
+        return transactionRepository.amountByEnterprise(id);
     }
 }

@@ -37,7 +37,7 @@ public class transactionFrontController {
 
     @GetMapping(value= "/front/movements")
     public String showTransactionList(Model model) {
-        List< Transaction> transactionList = transactionService.getTransactionList();
+        List<Transaction> transactionList = transactionService.getTransactionList();
         model.addAttribute("transactionList", transactionList);
         return "pages/transaction/transaction";
     }

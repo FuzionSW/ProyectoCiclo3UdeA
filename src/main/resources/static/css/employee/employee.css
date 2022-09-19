@@ -137,3 +137,7 @@ td button{
     vertical-align: center;
     align-content: center;
 }
+
+td button a{
+    color: inherit;
+}
