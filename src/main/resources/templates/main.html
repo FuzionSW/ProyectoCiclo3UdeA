@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" th:href="@{/css/main.css}">
+
+    <div th:replace="~{fragments/html_head.html}" />
+</head>
+<body>
+<div class="contenedor">
+    <div th:replace="~{fragments/html_sidebar.html}" />
+
+    <div class="contenido">
+        <section class="home-section">
+            <header class="header">
+                <h1>Sistema contable - Menú principal</h1>
+            </header>
+
+            <div class="widget-1">
+                <div>
+                    <h3>Sistema de gestión de ingresos y gastos</h3>
+                </div>
+                <div>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/front/movements'|">Acceder</button>
+                </div>
+            </div>
+            <div class="widget-2">
+                <div>
+                    <h3>Sistema de gestión de usuarios</h3>
+                </div>
+                <div>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/front/users'|">Acceder</button>
+                </div>
+            </div>
+            <div class="widget-3">
+                <div>
+                    <h3>Sistema de gestión de empresas</h3>
+                </div>
+                <div>
+                    <button class="boton" type="button" th:onclick="|window.location.href='/front/enterprises'|">Acceder</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div th:replace="~{fragments/html_footer.html}" />
+</div>
+<script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+</html>

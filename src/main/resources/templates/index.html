@@ -1,51 +1,92 @@
 <!DOCTYPE html>
-<html lang="es"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css" th:href="@{/css/index.css}">
-
-    <div th:replace="~{fragments/html_head.html}" />
+    <title>Sistema contable | FuzionSW</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="img/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <!-- Font Awesome CDN link-->
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--===============================================================================================-->
 </head>
 <body>
-<div class="contenedor">
-    <div th:replace="~{fragments/html_sidebar.html}" />
 
-    <div class="contenido">
-        <section class="home-section">
-            <header class="header">
-                <h1>Sistema contable - Menú principal</h1>
-            </header>
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('img/bg-01.jpg');">
+        <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+            <form class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-53" style="font-weight: bold; color: #11101D">
+						Sistema contable
+					</span>
 
-            <div class="widget-1">
-                <div>
-                    <h3>Sistema de gestión de ingresos y gastos</h3>
+                <div style="text-align: center; color: #11101D">
+                    <img src="img/contabilidad.png" alt="Logo" height="100px" style="margin: 20px;">
+                    <p style="text-align: justify; font-size: 20px; margin-bottom: 20px">
+                        El aplicativo permite gestionar los ingresos y egresos de su empresa. El sistema permite visualizar los totales de la empresa para que el gerente pueda tomar decisiones sobre la situación financiera.
+                    </p>
                 </div>
-                <div>
-                    <button class="boton" type="button" th:onclick="|window.location.href='/front/movements'|">Acceder</button>
+
+                <a href="/front/main" class="btn btn-primary m-b-20" sec:authorize="isAuthenticated()">
+                    <i class="fa-solid fa-right-to-bracket" style="margin: 10px"></i>
+                    Ingresar
+                </a>
+
+                <a href="https://lms.misiontic2022udea.com/?redirect=0" class="btn btn-secondary m-b-20" sec:authorize="isAuthenticated()">
+                    <i class="fa-solid fa-square-info" style="margin: 10px"></i>
+                    Saber más
+                </a>
+
+                <div class="container-login100-form-btn m-t-17" sec:authorize="!isAuthenticated()">
+                    <button type="button" class="login100-form-btn" th:onclick="|window.location.href='/oauth2/authorization/auth0'|">
+                        <i class="fa-solid fa-address-card" style="margin: 10px"></i>
+                        Log in
+                    </button>
                 </div>
-            </div>
-            <div class="widget-2">
-                <div>
-                    <h3>Sistema de gestión de usuarios</h3>
-                </div>
-                <div>
-                    <button class="boton" type="button" th:onclick="|window.location.href='/front/users'|">Acceder</button>
-                </div>
-            </div>
-            <div class="widget-3">
-                <div>
-                    <h3>Sistema de gestión de empresas</h3>
-                </div>
-                <div>
-                    <button class="boton" type="button" th:onclick="|window.location.href='/front/enterprises'|">Acceder</button>
-                </div>
-            </div>
-        </section>
+            </form>
+        </div>
     </div>
-
-    <div th:replace="~{fragments/html_footer.html}" />
 </div>
-<script src="../static/js/script.js" type="text/javascript" th:src="@{/js/script.js}"></script>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
 </body>
 </html>

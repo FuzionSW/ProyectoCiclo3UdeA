@@ -1,0 +1,17 @@
+# src/main/resources/application.yml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: k7vs3RWP8yP4H7YOW8jvOKJtxMbZouzn
+            client-secret: aWIZVZLo492Z2Bsj26sLpuJgkCfn-68gWHjQEqBoPfAS-voZNr17dD9NAkleiz8r
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          auth0:
+            # trailing slash is important!
+            issuer-uri: https://dev-z60pgtx4.us.auth0.com/
