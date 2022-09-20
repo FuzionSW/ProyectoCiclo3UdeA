@@ -36,15 +36,25 @@
     <div class="container-login100" style="background-image: url('/img/bg-01.jpg');">
         <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
             <form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-53" style="font-weight: bold; color: #11101D">
-						Sistema contable
-					</span>
+
+                <span class="login100-form-title p-b-53" style="font-weight: bold; color: #11101D">
+                    Sistema contable
+                </span>
 
                 <div style="text-align: center; color: #11101D">
                     <img src="img/contabilidad.png" alt="Logo" height="100px" style="margin: 20px;">
                     <p style="text-align: justify; font-size: 20px; margin-bottom: 20px">
                         El aplicativo permite gestionar los ingresos y egresos de su empresa. El sistema permite visualizar los totales de la empresa para que el gerente pueda tomar decisiones sobre la situación financiera.
                     </p>
+                </div>
+
+                <div sec:authorize="isAuthenticated()" style="padding: 0% 0; width: 100%; border-radius: 5px; margin-bottom: 20px; display: flex; flex-direction: row; align-content: center; justify-content: center">
+                    <div>
+                        <img th:src="${userProfile.getImage()}" alt="Imágen de perfil" style="margin:10px; height: 100px; border-radius: 50px;">
+                    </div>
+                    <div style="padding: 10% 0">
+                        <p style="font-size: 20px; color: #1d1b31" th:text="'Bienvenid@: ' + ${userProfile.getGiven_name()}"></p>
+                    </div>
                 </div>
 
                 <a href="/front/main" class="btn btn-primary m-b-20" sec:authorize="isAuthenticated()">
