@@ -18,4 +18,9 @@ public class MainController
     public String showMain() {
         return "main";
     }
+
+    @GetMapping(value = "/logout")
+    public String showLogout(){
+        return "index";
+    }
 }
